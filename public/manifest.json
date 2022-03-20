@@ -1,0 +1,8 @@
+{
+  "short_name": "Ten's Characters",
+  "name": "Ten's Characters | FiveM",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

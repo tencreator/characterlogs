@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+
+:root {
+    --clr-primary:rgb(23,23,23);
+    --clr-secondary:rgb(33,33,33);
+    --txt-card:rgb(255, 255, 255);
+    --clr-accent:hsl(142 90% 61%);
+}
+
+* {
+    font-family:'Poppins', Times, serif;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-y: auto;
+    background: var(--clr-primary);
+    color:white;
+}
+
+/* width */
+body::-webkit-scrollbar {
+    width: 10px;
+    right: 10px;
+  }
+  
+  /* Track */
+body::-webkit-scrollbar-track {
+    background: #b3b3b3;
+}
+  
+  /* Handle */
+body::-webkit-scrollbar-thumb {
+    background: rgb(114, 114, 114);
+    border-radius: 100px;
+}
+  
+  /* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+    background: rgb(58, 58, 58);
+}
+
+abbr {
+    text-decoration: none;
+}
+
+a {
+    color: var(--txt-card);
+}
+
+mark {
+    background-color: #d6d6d6;
+    border-radius: 0.1em;
+}
+
+.nav-txt {
+    font-weight: 300;
+    color: white;
+}
+
+
+
+.navbar {
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.title {
+    text-align: center;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+.nav-li {
+    padding-right: 15px;
+    list-style: none;
+}
+
+.nav-txt {
+    padding-top: 19.5px;
+}
+
+.red-underline {
+    text-decoration: none;
+}
+
+.red-underline:hover {
+    text-decoration: underline rgb(242, 67, 72) 4px;
+}
+
+.no-style {
+    list-style: none;
+    font-style: none;
+}
+
+.title {
+    font-weight: bolder;
+}
+
+
+
+
+.recent-char-block {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card {
+    --padding:14em;
+
+    color: var(--txt-card);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: var(--padding) 0em 0em;
+    overflow: hidden;
+
+    height: 425px;
+    width: 25ch;
+
+    border-radius: .5rem;
+    transition: 350ms ease;
+}
+
+.card:hover,
+.card:focus {
+    transform: scale(1.05);
+}
+
+.card-title {
+    position: relative;
+    width: max-content;
+}
+
+.card-title::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    left:-2.5em;
+    bottom:1px;
+    background-color: var(--clr-accent);
+    width: calc(100% * 1.5);
+    
+    transform-origin: left;
+    transition: 350ms ease;
+    transform: scale(0);
+}
+
+.card-content > *:not(.card-title) {
+    opacity: 0;
+    transition: 350ms linear;
+}
+
+.card:hover .card-content > * {
+    opacity: 1;
+}
+
+
+.card:hover .card-title::after {
+    transform: scale(1);
+}
+
+.card-button {
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    color: black;
+    background-color: var(--clr-accent);
+    padding: .5em 1.25em;
+
+    transition: 350ms;
+    border-radius: .25em;
+}
+
+.card-button:hover,
+.card-button:focus {
+    background-color: white;
+    /* color: white;
+    background-color: rgba(255, 255, 255, 0); */
+}
+
+.card-content {
+    padding: 1.7em;
+    background: linear-gradient(
+        hsl(0 0% 0% / 0),
+        hsl(0 0% 0% / .3) 10%, 
+        hsl(0 0% 0% / 1)
+    );
+
+    transition: 750ms ease;
+    transform: translateY(7.25em);
+}
+
+.card:hover .card-content {
+    transform: translateY(0%);
+}
+
+.jeff-edison-card {
+    background-image: url(../img/jeff-edison.png);
+}
+
+.backstory {
+    --Side-padding:8em;
+    text-align: center;
+    padding-left: var(--Side-padding);
+    padding-right: var(--Side-padding);
+}
+
+@media screen and (max-width:768px) {
+    .card-content {
+        transform: translateY(0%);
+    }
+
+    .card-content > *:not(.card-title) {
+        opacity: 1;
+        transition: 350ms linear;
+    }
+
+    .card-title::after {
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width:320px) {
+    .backstory {
+        --Side-padding:2em;
+    }
+}
+
+@media screen and (max-width:375px) {
+    .backstory {
+        --Side-padding:2em;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .backstory {
+        --Side-padding:2em;
+    }
+}
+
+@media screen and (min-width:2560px) {
+    h1 {
+        font-size: 4em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .navbar {
+        font-size: 1.5em;
+    }
+
+    .backstory {
+        font-size: 1.5em;
+    }
+
+    .card-content {
+        transform: translateY(6.2em);
+    }
+
+    .card:hover .card-content {
+        transform: translateY(-1.5em);
+    }
+
+    .card:focus .card-content {
+        transform: translateY(-1.5em);
+    }
+}
