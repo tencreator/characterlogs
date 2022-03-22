@@ -10,7 +10,7 @@ export default function JeffE() {
 
       <div class="char-title">
         <h2>
-          Jeff E
+          Jeff Edison
         </h2>
       </div>
       <div class="char-body">
